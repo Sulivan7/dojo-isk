@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { MapPin, Clock } from "lucide-react";
 import Container from "@/components/ui/Container";
+import { siteConfig } from "@/config/siteConfig";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -24,8 +25,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-iron-400">
-              Dojô de Karate-Dô Shotokan tradicional. Disciplina, técnica e
-              respeito no tatami.
+              {siteConfig.description}
             </p>
           </div>
 
@@ -69,14 +69,15 @@ export default function Footer() {
               <p className="flex items-start gap-2.5 text-sm text-iron-300">
                 <MapPin size={16} className="mt-0.5 shrink-0 text-iron-red" />
                 <span>
-                  Rua Exemplo, 000 — Bairro
+                  {siteConfig.address.street} —{" "}
+                  {siteConfig.address.neighborhood}
                   <br />
-                  Cidade · Estado
+                  {siteConfig.address.city} · {siteConfig.address.state}
                 </span>
               </p>
               <p className="flex items-center gap-2.5 text-sm text-iron-300">
                 <Clock size={16} className="shrink-0 text-iron-red" />
-                <span>Seg a sex, 17h às 21h</span>
+                <span>{siteConfig.openingHours}</span>
               </p>
             </div>
           </div>
