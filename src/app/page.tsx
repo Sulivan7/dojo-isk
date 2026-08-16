@@ -1,8 +1,9 @@
-export default function Home() {
+import Hero from "@/components/sections/Hero";
+
+export default function HomePage() {
   return (
-    <main>
-      <h1>Iron Shotokan Karate</h1>
-      <p>Em construção.</p>
-    </main>
+    <>
+      <Hero />
+    </>
   );
 }
