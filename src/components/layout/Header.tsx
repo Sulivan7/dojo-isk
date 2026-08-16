@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import Container from "@/components/ui/Container";
+import { whatsappLink, MESSAGES } from "@/lib/whatsapp";
 
 const LINKS = [
   { href: "/#dojo", label: "dojô" },
@@ -14,9 +15,6 @@ const LINKS = [
   { href: "/aulas", label: "Aulas" },
   { href: "/conquistas", label: "Conquistas" },
 ];
-
-const WHATSAPP =
-  "https://wa.me/5522996051904?text=Ol%C3%A1!%20Vim%20pelo%20site%20do%20dojo.";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -57,7 +55,7 @@ export default function Header() {
               </Link>
             ))}
             <a
-              href={WHATSAPP}
+              href={whatsappLink(MESSAGES.general)}
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-md bg-iron-red px-4 py-2.5 text-sm text-white transition-colors hover:bg-iron-red-dark"
@@ -92,7 +90,7 @@ export default function Header() {
                 </Link>
               ))}
               <a
-                href={WHATSAPP}
+                href={whatsappLink(MESSAGES.general)}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setOpen(false)}
